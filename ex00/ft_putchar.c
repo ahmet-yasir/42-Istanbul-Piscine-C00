@@ -6,13 +6,13 @@
 /*   By: akulaksi <akulaksi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 04:48:58 by akulaksi          #+#    #+#             */
-/*   Updated: 2024/01/30 04:52:58 by akulaksi         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:17:44 by akulaksi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }

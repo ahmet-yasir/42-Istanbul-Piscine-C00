@@ -6,20 +6,20 @@
 /*   By: akulaksi <akulaksi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 05:12:26 by akulaksi          #+#    #+#             */
-/*   Updated: 2024/01/30 05:14:59 by akulaksi         ###   ########.fr       */
+/*   Updated: 2024/01/31 13:22:58 by akulaksi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>>
+#include <unistd.h>
 
-void    ft_print_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
-    int i;
+	int	i;
 
-    i = 122;
-    while (i > 96)
-    {
-        write(1, &i, 1);
-        i--;
-    } 
+	i = 122;
+	while (i > 96)
+	{
+		write(1, &i, 1);
+		i--;
+	}
 }
