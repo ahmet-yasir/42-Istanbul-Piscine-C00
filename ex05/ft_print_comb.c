@@ -6,11 +6,20 @@
 /*   By: akulaksi <akulaksi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:25:32 by akulaksi          #+#    #+#             */
-/*   Updated: 2024/01/31 13:33:18 by akulaksi         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:43:26 by akulaksi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	print(int i, int j, int k)
+{
+	write(1, &i, 1);
+	write(1, &j, 1);
+	write(1, &k, 1);
+	if (i != 55 || j != 56 || k != 57)
+		write(1, ", ", 2);
+}
 
 void	ft_print_comb(void)
 {
@@ -37,13 +46,4 @@ void	ft_print_comb(void)
 		}
 		i++;
 	}
-}
-
-void	print(int i, int j, int k)
-{
-	write(1, &i, 1);
-	write(1, &j, 1);
-	write(1, &k, 1);
-	if (i != 55 || j != 56 || k != 57)
-		write(1, ", ", 2);
 }
