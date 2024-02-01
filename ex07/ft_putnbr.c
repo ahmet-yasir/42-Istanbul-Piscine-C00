@@ -6,7 +6,7 @@
 /*   By: akulaksi <akulaksi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:39:52 by akulaksi          #+#    #+#             */
-/*   Updated: 2024/02/01 14:57:53 by akulaksi         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:59:14 by akulaksi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,4 @@ void	ft_putnbr(int nb)
 		place_value /= 10;
 	}
 	ft_putnbr_print(new_num);
-}
-
-int	main(void)
-{
-	ft_putnbr(-42);
-	return 0;
 }
