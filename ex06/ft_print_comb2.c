@@ -26,7 +26,7 @@ void	print(int k, int l, int i)
 			write(1, " ", 2);
 			write(1, &i, 1);
 			write(1, &j, 1);
-			if (!(k == 57 && l == 57 && i == 57 && j == 57))
+			if (!(k == 57 && l == 56 && i == 57 && j == 57))
 				write(1, ", ", 2);
 		}
 		j++;
