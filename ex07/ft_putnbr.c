@@ -64,9 +64,3 @@ void ft_putnbr(int nb)
     char *str = ft_putnbr_to_string(nb);
     ft_print(str);    
 }
-
-int main(void)
-{
-    ft_putnbr(0000000);
-    return 0;
-}
