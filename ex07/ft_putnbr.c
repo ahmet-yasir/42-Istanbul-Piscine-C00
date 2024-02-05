@@ -6,58 +6,67 @@
 /*   By: akulaksi <akulaksi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:39:52 by akulaksi          #+#    #+#             */
-/*   Updated: 2024/02/01 15:18:29 by akulaksi         ###   ########.fr       */
+/*   Updated: 2024/02/05 06:31:20 by akulaksi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putnbr_print(int nb)
+void ft_print(char *str)
 {
-	int	temp;
-	int	value;
+    int i;
 
-	temp = nb;
-	while (temp > 0)
-	{
-		value = (temp % 10) + 48;
-		write(1, &value, 1);
-		temp /= 10;
-	}
+    i = 0;
+    while (str[i] != '\0')
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
 }
 
-void	ft_putnbr_reverse(int nb)
+char	*ft_putnbr_to_string(int nb)
 {
-	int	temp;
-	int	place_value;
-	int	new_num;
+	char *str;
+    int temp = nb;
+    int size = 0;
 
-	temp = nb;
-	place_value = 1;
-	new_num = 0;
-	while (temp > 0)
-	{
-		temp /= 10;
-		place_value *= 10;
-	}
-	place_value /= 10;
-	while (nb > 0)
-	{
-		new_num += place_value * (nb % 10);
-		nb /= 10;
-		place_value /= 10;
-	}
-	ft_putnbr_print(new_num);
+    while (temp > 0)
+    {
+        temp /= 10;
+        size++;
+    }
+
+	str = (char *)malloc((size + 1) * sizeof(char));
+    temp = nb;
+    int i = size - 1;
+    while (temp > 0)
+    {
+        str[i] = (temp % 10) + '0';
+        temp /= 10;
+        i--;
+    }
+    str[size] = '\0';
+    return str;
 }
 
-void	ft_putnbr(int nb)
+void ft_putnbr(int nb)
 {
-	if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb *= (-1);
-	}
+	if (nb == -2147483648)
+		write(1, "-2147483648",12);
 	else if (nb == 0)
 		write(1, "0", 1);
-	ft_putnbr_reverse(nb);
+	else if (nb < 0)
+    {
+        write(1, "-", 1);
+        nb *= (-1);
+    }
+    char *str = ft_putnbr_to_string(nb);
+    ft_print(str);    
+}
+
+int main(void)
+{
+    ft_putnbr(0000000);
+    return 0;
 }
