@@ -6,53 +6,36 @@
 /*   By: akulaksi <akulaksi@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:35:38 by akulaksi          #+#    #+#             */
-/*   Updated: 2024/02/06 14:34:46 by akulaksi         ###   ########.fr       */
+/*   Updated: 2024/02/07 08:55:21 by akulaksi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print(int k, int l, int i)
+void ft_putchar(char c)
 {
-	int	j;
-
-	j = 48;
-	while (j < 58)
-	{
-		if (((k * 10) + l) < ((i * 10) + j))
-		{
-			write(1, &k, 1);
-			write(1, &l, 1);
-			write(1, " ", 2);
-			write(1, &i, 1);
-			write(1, &j, 1);
-			if (!(k == 57 && l == 56 && i == 57 && j == 57))
-				write(1, ", ", 2);
-		}
-		j++;
-	}
+    write(1, &c, 1);
 }
 
-void	ft_print_comb2(void)
-{
-	int	i;
-	int	k;
-	int	l;
+void ft_print_comb2(void) {
+    int i = 0;
+    while (i <= 98) {
+        int j = i + 1;
+        while (j <= 99) {
+            ft_putchar((i / 10) + '0');
+            ft_putchar((i % 10) + '0');
+            ft_putchar(' ');
+            ft_putchar((j / 10) + '0');
+            ft_putchar((j % 10) + '0');
 
-	k = 48;
-	while (k < 58)
-	{
-		l = 48;
-		while (l < 58)
-		{
-			i = 48;
-			while (i < 58)
-			{
-				print(k, l, i);
-				i++;
-			}
-			l++;
-		}
-		k++;
-	}
+            if (i != 98 || j != 99) {
+                ft_putchar(',');
+                ft_putchar(' ');
+            }
+
+            j++;
+        }
+        i++;
+    }
+    ft_putchar('\n');
 }
