@@ -22,6 +22,7 @@ void	ft_print_comb2(void)
 	int	i;
 	int	j;
 
+	int i = 0;
 	while (i <= 98)
 	{
 		j = i + 1;
@@ -41,5 +42,4 @@ void	ft_print_comb2(void)
 		}
 		i++;
 	}
-	ft_putchar('\n');
 }
