@@ -22,7 +22,7 @@ void	ft_print_comb2(void)
 	int	i;
 	int	j;
 
-	int i = 0;
+	i = 0;
 	while (i <= 98)
 	{
 		j = i + 1;
